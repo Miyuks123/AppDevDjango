@@ -137,6 +137,10 @@ MEDIA_URL = '/media/' #IMAGE
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+JAZZMIN_SETTINGS = {
+    "site_title": "Mini Facebook",
+}
+
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 LOGIN_REDIRECT_URL = 'bl-home'

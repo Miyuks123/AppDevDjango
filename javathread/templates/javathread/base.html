@@ -17,7 +17,7 @@
       <header class="p-3 bg-dark text-white">
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <a href="{% url 'bl-home' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
               <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
             </a>
     
@@ -39,7 +39,7 @@
                   {% csrf_token %}
                   <button type="submit" class="btn btn-outline-primary me-2">Logout</button>     
                 </form>
-                <a class="btn btn-outline-primary me-2" href="#">Profile</a>
+                <a class="btn btn-outline-primary me-2" href="{% url 'profile' %}">Profile</a>
               {% else %}
                 <a type="button" class="btn btn-outline-primary me-2" href="{% url 'login' %}">Login</a>
                 <a type="button" class="btn btn-primary" href="{% url 'register' %}">Sign-up</a>
