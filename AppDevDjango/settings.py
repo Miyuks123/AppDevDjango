@@ -117,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Manila'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -138,7 +138,7 @@ MEDIA_URL = '/media/' #IMAGE
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS = {
-    "site_title": "Mini Facebook",
+    "site_title": "Javathread",
 }
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
