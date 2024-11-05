@@ -29,7 +29,7 @@
         <div class="col-md-6 gedf-main">
 
           <!--- \\\\\\\Post-->
-          <div class="card gedf-card">
+          <div class="card gedf-card post-card">
             <div class="card-header">
                 <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
@@ -40,7 +40,7 @@
             <div class="card-body">
                 <div class="content-section">
                     <div class="btn-group">
-                        <a type="submit" class="btn btn-primary" href="{% url 'post-create' %}">Create Post</a>
+                        <a type="submit" class="btn btn-warning" href="{% url 'post-create' %}">Create Post</a>
                     </div>
                 </div>
                 <!--div class="tab-content" id="myTabContent">
@@ -67,7 +67,7 @@
         <!-- Post /////-->
         {% for post in posts %}
         <!--- \\\\\\\Post-->
-        <div class="card gedf-card">
+        <div class="card gedf-card ">
           <div class="card-header">
               <div class="d-flex justify-content-between align-items-center">
                   <div class="d-flex justify-content-between align-items-center">
@@ -103,9 +103,9 @@
               <p class="card-text">{{ post.content }}</p>
           </div>
           <div class="card-footer">
-              <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
-              <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
-              <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+              <a href="#" class="card-link" style="color: black;"><i class="fa fa-gittip" style="color:red"></i> Like</a>
+              <a href="#" class="card-link" style="color: black;"><i class="fa fa-comment"></i> Comment</a>
+              <a href="#" class="card-link" style="color: black;"><i class="fa fa-mail-forward"></i> Share</a>
           </div>
       </div>
       <!-- Post /////-->
