@@ -8,11 +8,20 @@ from django.views.generic import (
     DeleteView
 )
 from .models import Post
-
+from django.core.paginator import Paginator
 
 def home(request):
+    # Get all posts
+    posts = Post.objects.all()
+
+    # Paginate the posts
+    paginator = Paginator(posts, 5)  # Show 5 posts per page
+    page_number = request.GET.get('page')  # Get the page number from the request
+    page_obj = paginator.get_page(page_number)  # Get the page object
+
+    # Pass the page_obj to the template
     context = {
-        'posts': Post.objects.all()
+        'page_obj': page_obj
     }
     return render(request, 'javathread/home.html', context)
 
@@ -22,6 +31,7 @@ class PostListView(ListView):
     template_name = 'javathread/home.html' # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']
+    paginate_by = 5
 
 
 class PostDetailView(DetailView):

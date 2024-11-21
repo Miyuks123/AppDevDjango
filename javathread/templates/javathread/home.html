@@ -38,10 +38,8 @@
                 </ul>
             </div>
             <div class="card-body">
-                <div class="content-section">
-                    <div class="btn-group">
-                        <a type="submit" class="btn btn-warning" href="{% url 'post-create' %}">Create Post</a>
-                    </div>
+                <div class="btn-group">
+                    <a type="submit" class="btn btn-warning" href="{% url 'post-create' %}">Create Post</a>
                 </div>
                 <!--div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
@@ -65,7 +63,7 @@
             </div>
         </div>
         <!-- Post /////-->
-        {% for post in posts %}
+        {% for post in page_obj %}
         <!--- \\\\\\\Post-->
         <div class="card gedf-card ">
           <div class="card-header">
@@ -111,6 +109,21 @@
       <!-- Post /////-->
       {% endfor %}
 
+        <!-- Pagination Controls with Disabled State -->
+        <div class="pagination justify-content-center mt-4">
+            {% if page_obj.has_previous %}
+                <a class="btn btn-warning" href="?page=1" style="margin-right: 10px;">&laquo; First</a>
+                <a class="btn btn-warning" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+        
+            <span class="mx-2">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        
+            {% if page_obj.has_next %}
+                <a class="btn btn-warning" href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a class="btn btn-warning" href="?page={{ page_obj.paginator.num_pages }}" style="margin-left: 10px;"   >Last &raquo;</a>
+            {% endif %}
+        </div>
+                
     </div>
       <div class="col-md-3">
         <div class="card gedf-card">
